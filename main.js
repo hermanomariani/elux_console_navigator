@@ -48,7 +48,7 @@ let domains = {
 }
 
 let go = (domain, params = false) => {
-    let parsedParams = params? '' : Object.entries(params).map(item => item.join('=')).join('&');
+    let parsedParams = params? Object.entries(params).map(item => item.join('=')).join('&') : '';
     let parsedUrl = `${domain}?${parsedParams}`;
     location = parsedUrl;
     return go
